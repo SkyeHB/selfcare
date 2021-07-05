@@ -3,6 +3,7 @@ import React, { Profiler } from "react";
 import Welcome from "./app/screens/Welcome";
 import Login from "./app/screens/Login";
 import Profile from "./app/screens/Profile";
+import CreateAcccount from './app/screens/CreateAcccount';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createAppContainer } from 'react-navigation';
@@ -18,11 +19,12 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="Welcome"
         screenOptions={{
-          header: (props) => <CustomNavigationBar {...props} />,
-        }}>
-    <Stack.Screen name="Welcome" component={Welcome} />
-    <Stack.Screen name="Login" component={Login} />
-    <Stack.Screen name="Profile" component={Profile} />
+          header: (props) => <CustomNavigationBar {...props} />
+          }}>
+      <Stack.Screen name="Welcome" component={Welcome}/>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="CreateAccount" component={CreateAcccount}/>
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   </NavigationContainer>
   </PaperProvider>
@@ -38,7 +40,7 @@ function CustomNavigationBar({ navigation, previous }) {
     <Appbar.Header>
       {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
       <Appbar.Content title="SelfCare" />
-      {!previous ? (
+
         <Menu
           visible={visible}
           onDismiss={closeMenu}
@@ -49,7 +51,7 @@ function CustomNavigationBar({ navigation, previous }) {
           <Menu.Item onPress={() => {console.log('Option 2 was pressed')}} title="Option 2" />
           <Menu.Item onPress={() => {console.log('Option 3 was pressed')}} title="Option 3" disabled />
         </Menu>
-      ) : null}
+
     </Appbar.Header>
   );
 }

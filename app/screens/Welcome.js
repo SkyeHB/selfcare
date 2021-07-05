@@ -11,6 +11,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from "./Login";
+import CreateAccount from "./CreateAcccount"
 
 function Welcome({navigation}) {
   return (
@@ -20,7 +21,7 @@ function Welcome({navigation}) {
       </TouchableOpacity>
       <View style={styles.loginsignup}>
         <Button title="Log In" onPress={() => navigation.navigate('Login')}/>
-        <Button title="Sign Up" />
+        <Button title="Sign Up" onPress={() => navigation.navigate('CreateAccount')}/>
       </View>
     </SafeAreaView>
   );
