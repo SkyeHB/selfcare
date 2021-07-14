@@ -43,7 +43,7 @@ authenticateUser(navigation){
 
 console.log(this.state.pass)
 console.log(this.state.email);
-this.props.navigation.navigate('Profile');
+this.props.navigation.navigate('MoodScale');
 
 }
 

@@ -4,11 +4,14 @@ import Welcome from "./app/screens/Welcome";
 import Login from "./app/screens/Login";
 import Profile from "./app/screens/Profile";
 import CreateAcccount from './app/screens/CreateAcccount';
+import MoodNotes from './app/screens/MoodNotes';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { createAppContainer } from 'react-navigation';
 import { Appbar, Menu } from 'react-native-paper';
 import { Provider as PaperProvider} from 'react-native-paper'
+import MoodEmotion from './app/screens/MoodEmotion';
+import MoodScale from './app/screens/MoodScale';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +28,9 @@ export default function App() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="CreateAccount" component={CreateAcccount}/>
       <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="MoodNotes" component={MoodNotes} />
+      <Stack.Screen name="MoodEmotion" component={MoodEmotion} />
+      <Stack.Screen name="MoodScale" component={MoodScale} />
     </Stack.Navigator>
   </NavigationContainer>
   </PaperProvider>

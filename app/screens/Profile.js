@@ -14,7 +14,9 @@ import {
 function Profile(props) {
     return (
         <SafeAreaView style={styles.container}>
-
+            <Text>
+              PLACEHOLDER FOR PROFILE PAGE
+            </Text>
         </SafeAreaView>
     );
 }
