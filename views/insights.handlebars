@@ -1,0 +1,148 @@
+<div class="homeBody">
+    <script src="/js/insights.js"></script>
+    <script>
+        function generateInsights(userMood){
+    //array order from 0-5 is sad>happy>depressed>angry>neutral>anxious
+    var mood = [0,0,0,0,0,0];
+    var moodIndex = ["sad", "happy", "depressed", "angry", "neutral", "anxious"];
+    var max = 0;
+    var maxWeek;
+    var maxMonth;
+    var percentage = 0;
+    var moodPercentMonth;
+    var moodPercentWeek;
+var br
+    console.log(userMood[1].moodEmotion);
+    for(let i = 0; i < userMood.length;i++){
+        console.log(userMood[i].moodEmotion);
+        if(userMood[i].moodEmotion == "sad"){
+            mood[0]++;
+        }
+        else if(userMood[i].moodEmotion == "happy"){
+            mood[1]++;
+        }
+        else if(userMood[i].moodEmotion == "depressed"){
+            mood[2]++;
+        }
+        else if(userMood[i].moodEmotion == "angry"){
+            mood[3]++;
+        }
+        else if(userMood[i].moodEmotion == "neutral"){
+            mood[4]++;
+        }
+        else if(userMood[i].moodEmotion == "anxious"){
+            mood[5]++;
+        }
+        percentage = percentage + userMood[i].moodPercent;
+        if(i==6){
+            max=0;
+            moodPercentWeek = Math.floor(percentage/7);
+            for(let i = 0; i < mood.length;i++){
+                if(mood[i] > max){
+                    maxWeek = i;
+                    max=mood[i];
+                }
+            }
+        }
+        if(i==30){
+            max = 0;
+            moodPercentMonth = Math.floor(percentage/31);
+            for(let i = 0; i < mood.length;i++){
+                if(mood[i] > max){
+                    maxMonth = i;
+                    max=mood[i];
+                }
+            }
+        }
+    }
+
+    var monthly = document.createTextNode(`Your most common mood is ${moodIndex[maxMonth]}
+    `)
+    var weekly = document.createTextNode(`Your most common mood over the last week was ${moodIndex[maxWeek]}
+    `)
+    if(userMood.length>=31){
+        let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(monthly)
+        document.getElementById("insights").appendChild(a);
+        br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+        monthly = document.createTextNode(`Your average mood percentage over the last 31 days was ${moodPercentMonth}%
+        `)
+        br = document.createElement("br");
+        document.getElementById("insights").appendChild(br)
+        a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(monthly)
+        document.getElementById("insights").appendChild(a);
+    }
+    if(userMood.length>=7){
+        let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(weekly)
+        document.getElementById("insights").appendChild(a);
+        br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+        weekly = document.createTextNode(`Your average mood percentage over the last 7 days was ${moodPercentWeek}%
+        `)
+        a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(weekly)
+        document.getElementById("insights").appendChild(a);
+        br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+    }
+    if(moodPercentMonth > moodPercentWeek){
+        let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(document.createTextNode(`Your mood is currently on a downward trend`))
+        document.getElementById("insights").appendChild(a);
+                    br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+    }
+    else{
+                let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(document.createTextNode(`Your mood is currently on a upwards trend`))
+        document.getElementById("insights").appendChild(a);
+                    br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+    }
+    if(userMood[userMood.length-1].moodPercent < moodPercentMonth){
+                        let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(document.createTextNode(`Today has been better than your average mood`))
+                document.getElementById("insights").appendChild(a);
+                    br = document.createElement("br");
+        document.getElementById("insights").appendChild(br).appendChild(br);
+    }
+    else{
+                                let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(document.createTextNode(`Today has been worse than your average mood`))
+                        document.getElementById("insights").appendChild(a);
+                    br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+    }
+                                    let a = document.createElement('a');
+        a.className = "button1";
+        a.appendChild(document.createTextNode(`You have tracked a total of ${userMood.length} moods`))
+    document.getElementById("insights").appendChild(a);
+            br = document.createElement("br");
+        document.getElementById("insights").appendChild(br);
+}
+    </script>
+    <script>
+        var decodeMood = decodeURIComponent("{{{userMood}}}");
+        var moods = JSON.parse(decodeMood);
+        console.log(moods);
+        $(document).ready(function () {
+            generateInsights(moods);
+        });
+
+    </script>
+    <h4 id="insightTitle">INSIGHTS</h2>
+    <div id="insights">   
+
+    </div>
+</div>

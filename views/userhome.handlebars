@@ -1,0 +1,15 @@
+<div class="userHomeMoods">
+    <h1 id="packagestitle"> Tracked moods </h1>
+<script>
+
+</script>
+
+    {{#each userMood}}
+    <div id="userHome">
+        <a class="button1"><p>Date:{{this.day}}<br>     Percentage:{{this.moodPercent}}% <br>      Emotion:{{this.moodEmotion}}<br>       Notes:{{this.moodNotes}}</p></a>
+    </div>
+    {{/each}}
+    <br>
+    <br>
+    <br>
+</div>

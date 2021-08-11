@@ -1,0 +1,218 @@
+    <br>
+    <br>
+     <table id="graphTable" align="center">
+         <tr>
+             <td>
+                 <div id="tableLabel">Duration: </div>
+             </td>
+             <td >
+                 <button id="home" class="bn54" onclick="week()">
+      <span class="bn54span">1 week</span>
+    </button>
+    </td>
+    <td>
+    <button id="home" class="bn54" onclick="week2()">
+      <span class="bn54span">2 weeks</span>
+    </button>
+    </td>
+    <td >
+    <button id="home" class="bn54" onclick='month()'>
+      <span class="bn54span">1 month</span>
+    </button>
+    </td>
+         </tr>
+         <tr>
+             <td>
+                 <div id="tableLabel">Display type: </div>
+                 
+             </td>
+             <td >      
+                <button id="home" class="bn54" onclick='linegraph()'>
+                    <span class="bn54span">line graph</span>
+                </button>
+            </td>
+            <td >
+                <button id="home" class="bn54" onclick='bargraph()'>
+                    <span class="bn54span">bar graph</span>
+                </button>
+            </td>
+         </tr>
+     </table>
+<br>
+<br>
+    <div id="graphTitle">
+        
+    </div>
+    <br>
+<div id="graph">
+<canvas id="myChart" width="400" height="100"></canvas>
+</div>
+<script>
+    var len = 7;
+    var line = 1;
+        function linegraph(){
+            line = 1;
+                            while(document.getElementById('myChart').firstChild){
+        document.getElementById('myChart').removeChild(document.getElementById('myChart').lastChild);
+        }
+        day1=[];
+        mPercent = [];
+        genGraph();
+        }
+        function bargraph(){
+            line = 0;
+                            while(document.getElementById('myChart').firstChild){
+        document.getElementById('myChart').removeChild(document.getElementById('myChart').lastChild);
+        }
+        day1=[];
+        mPercent = [];
+        genGraph();
+        }
+        function week(){
+        len = 7;
+                while(document.getElementById('myChart').firstChild){
+        document.getElementById('myChart').removeChild(document.getElementById('myChart').lastChild);
+        }
+        day1=[];
+        mPercent = [];
+        genGraph();
+        }
+
+        function week2(){
+        len = 14;
+                while(document.getElementById('myChart').firstChild){
+        document.getElementById('myChart').removeChild(document.getElementById('myChart').lastChild);
+        }
+        day1=[];
+        mPercent = [];
+        genGraph();
+    }
+        function month(){
+        len = 29;
+        while(document.getElementById('myChart').firstChild){
+        document.getElementById('myChart').removeChild(document.getElementById('myChart').lastChild);
+        }
+        day1=[];
+        mPercent = [];
+        genGraph();
+    }
+        var decodeMood = decodeURIComponent("{{{userMood}}}");
+        var moods = JSON.parse(decodeMood);
+        var day1 = [];
+        var mPercent = [];
+        var myChart;
+    function genGraph(){
+        while(document.getElementById('graphTitle').firstChild){
+            document.getElementById('graphTitle').removeChild(document.getElementById('graphTitle').lastChild);
+        }
+        if(len == 7){
+            document.getElementById("graphTitle").appendChild(document.createTextNode("Mood over 1 week"))
+        }
+        else if(len == 14){
+            document.getElementById("graphTitle").appendChild(document.createTextNode("Mood over 2 weeks"))
+        }
+        else{
+            document.getElementById("graphTitle").appendChild(document.createTextNode("Mood over 1 month"))
+        }
+        if(line == 1){
+        for(let i = 0; i < len; i++){
+            if(i < moods.length){
+                mPercent.push(moods[i].moodPercent);
+                day1.push(moods[i].day);
+            }
+        }
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            if(myChart){
+                console.log("why")
+                myChart.destroy();
+            }
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                labels: day1,
+                datasets: [{
+                label: 'Mood Percentage',
+                data: mPercent,
+                borderWidth: 1
+            }]
+        }  ,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+        }
+        else{
+            var moodamnt  = [0,0,0,0,0,0];
+            var moodType = ["Sad", "Happy", "Depressed", "Angry", "Neutral", "Anxious"]
+            //sad, happy, depressed, angry, neutral, anxious
+                    for(let i = 0; i < len; i++){
+            if(i < moods.length){
+                if(moods[i].moodEmotion == "sad"){
+                    moodamnt[0]++;
+                }
+                                if(moods[i].moodEmotion == "happy"){
+                    moodamnt[1]++;
+                }
+                                if(moods[i].moodEmotion == "depressed"){
+                    moodamnt[2]++;
+                }
+                                if(moods[i].moodEmotion == "angry"){
+                    moodamnt[3]++;
+                }
+                                if(moods[i].moodEmotion == "neutral"){
+                    moodamnt[4]++;
+                }
+                                if(moods[i].moodEmotion == "anxious"){
+                    moodamnt[5]++;
+                }
+            }
+        }
+        console.log(moodamnt)
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            if(myChart){
+                console.log("why")
+                myChart.destroy();
+            }
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                labels: moodType,
+                datasets: [{
+                label: 'Frequency of Mood Emotion',
+                data: moodamnt,
+                borderWidth: 1
+            }]
+        }  ,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks:{
+                        stepSize:1
+                    }
+                }
+            }
+        }
+    });
+        }
+    }
+        $(document).ready(function () {
+            genGraph();
+        });
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

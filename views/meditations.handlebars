@@ -1,0 +1,160 @@
+<script src="/js/meditations.js"></script>
+<script>
+
+    var len = 7
+    var tags = [];
+    function generateTags(userMood){
+        if(userMood){
+            for(let i = 1; i < len;i++){
+                if(userMood.length - i >= 0){
+                    let notes = userMood[userMood.length - i].moodNotes.split(" ");
+                    if(notes){
+                        for(let j = 0; j < notes.length; j++){
+                            if(notes[j] == "sad" || notes[j] == "crying" || notes[j] == "cry" || notes[j] == "cried" || notes[j] == "miserable" || notes[j] == "gloomy"){
+                                console.log("Sad")
+                                tags.push("sad");
+                            }
+                            if(notes[j] == "depressed" || notes[j] == "miserable" || notes[j] == "gloomy"){
+                                console.log("depressed")
+                                tags.push("depressed");
+                            }
+                            //if(notes[j] == "happy" || notes[j] == "glad"){
+                            //    console.log("Happy")
+                            //    tags.push("happy");
+                            //}
+                            if(notes[j] == "anxious" || notes[j] == "anxiety" || notes[j] == "worried" || notes[j] == "troubled" || notes[j] == "fear" || notes[j] == "fearful"){
+                                console.log("anxious")
+                                tags.push("anxious");
+                            }
+                            if(notes[j] == "angry" || notes[j] == "annoyed" || notes[j] == "irritated" || notes[j] == "irritate" || notes[j] == "angry" || notes[j] == "irate"){
+                                console.log("angry")
+                                tags.push("angry");
+                            }
+                            if(notes[j] == "sleep" || notes[j] == "tired" || notes[j] == "fatigued" || notes[j] == "exhausted" || notes[j] == "sleepy" || notes[j] == "drowsy" || notes[j] == "drained"){
+                                console.log("sleep")
+                                tags.push("sleep");
+                            }
+                            if(notes[j] == "stress"){
+                                console.log("Stress")
+                                tags.push("stress");
+                            }              
+                        }
+                    }
+                    
+                    if(userMood[userMood.length - i].moodEmotion == "neutral"){
+                        tags.push("general");
+                    }
+                    else if(userMood[userMood.length - i].moodEmotion != "happy"){
+                        tags.push(userMood[userMood.length - i].moodEmotion);
+                    }
+                }
+                
+            }
+        }
+
+        let uniqTags = [... new Set(tags)];
+        console.log(uniqTags.length)
+        if(uniqTags.length < 3){
+            uniqTags.push("general");
+        }
+                    let title = document.createElement('h1');
+                    title.id = "medtitle";
+            title.appendChild(document.createTextNode(`Meditations`));
+                        document.getElementById("meditations").appendChild(title);
+                        if(len == 7){
+                            let duration = document.createElement('h3');
+                            duration.appendChild(document.createTextNode('Mood over 1 week'));
+                            document.getElementById("meditations").appendChild(duration);
+                        }
+                        else if(len == 14){
+                            let duration = document.createElement('h3');
+                            duration.appendChild(document.createTextNode('Mood over 2 weeks'));
+                            document.getElementById("meditations").appendChild(duration);
+                        }
+                        else if(len == 28){
+                            let duration = document.createElement('h3');
+                            duration.appendChild(document.createTextNode('Mood over 1 Month'));
+                            document.getElementById("meditations").appendChild(duration);
+                        }
+        for(let i = 0; i < uniqTags.length; i++){
+            let header = document.createElement('h1');
+            header.appendChild(document.createTextNode(`Meditations for ${uniqTags[i]}`));
+            document.getElementById("meditations").appendChild(header);
+            document.getElementById("meditations").appendChild(document.createElement("br"));
+          
+            for(let j = 0; j < meditations.length; j++){
+                if(meditations[j].Tag == uniqTags[i]){
+                    let a = document.createElement('a');
+                    let title = meditations[j].Title;
+                    a.href = meditations[j].Link; 
+                    a.target = "_blank";
+                    let button = document.createElement('button');
+                    button.className = "btn80 btn-43";
+                    button.id = "medbutton";
+                    button.type = "button";
+                    button.innerText = title;
+                    a.appendChild(button);
+                    
+                    document.getElementById("meditations").appendChild(a);
+                    document.getElementById("meditations").appendChild(document.createElement("br"));
+                }
+            }
+        }
+
+    }
+        
+            var decodeMood = decodeURIComponent("{{{userMood}}}");
+        var moods = JSON.parse(decodeMood);
+        console.log(moods);
+        $(document).ready(function () {
+            generateTags(moods);
+        });
+    function week(){
+        len = 7;
+        while(document.getElementById('meditations').firstChild){
+            document.getElementById('meditations').removeChild(document.getElementById('meditations').lastChild);
+        }
+        tags = [];
+        generateTags(moods);
+        }
+
+        function week2(){
+        len = 14;
+                while(document.getElementById('meditations').firstChild){
+            document.getElementById('meditations').removeChild(document.getElementById('meditations').lastChild);
+        }
+        tags=[]
+        generateTags(moods);
+    }
+        function month(){
+        len = 28;
+                while(document.getElementById('meditations').firstChild){
+            document.getElementById('meditations').removeChild(document.getElementById('meditations').lastChild);
+        }
+        tags=[]
+        generateTags(moods);
+    }
+</script>
+
+<body>
+    <div id="meditationButtons">
+    <button id="home" class="bn54" onclick="week()">
+      <span class="bn54span">1 week</span>
+    </button>
+    <br>
+    <br>
+    <button id="home" class="bn54" onclick="week2()">
+      <span class="bn54span">2 weeks</span>
+    </button>
+        <br>
+    <br>
+    <button id="home" class="bn54" onclick='month()'>
+      <span class="bn54span">1 month</span>
+    </button>
+    </div>
+    <div id="meditations">
+
+    </div>
+    </table>
+</body>
+

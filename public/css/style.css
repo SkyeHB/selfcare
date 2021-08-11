@@ -1,0 +1,650 @@
+@font-face {
+  font-family: "myFont";
+  font-style: normal;
+  font-weight: normal;
+  src: local("img/Typo_Round_Light_Demo.otf") format("opentype");
+}
+
+.userHomeMoods {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+  font-size: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+#logoMain {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  scale: 65%;
+}
+body {
+  background-color: #e4eef5;
+}
+#buttonsHome {
+  width: max-content;
+  margin: auto;
+}
+#slider {
+  padding-top: 5%;
+  width: max-content;
+  margin: auto;
+}
+#mood-percent-button {
+  width: max-content;
+  margin: auto;
+}
+#mood-percent-question {
+  padding-top: 5%;
+  width: max-content;
+  margin: auto;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+  font-size: 20px;
+}
+#mood-emotions {
+  width: max-content;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 50px;
+}
+#mood-emotion-question {
+  padding-top: 5%;
+  width: max-content;
+  margin: auto;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+  font-size: 20px;
+}
+#mood-notes {
+  width: max-content;
+  margin: auto;
+  padding: 1rem;
+  font-family: "Varela Round", sans-serif;
+}
+#notes {
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #e4eef5;
+  background-color: #a5c1e5;
+  border: none;
+  resize: none;
+  border-radius: 20px;
+  padding: 20px;
+  width: 300px;
+  height: 150px;
+}
+#notes:focus {
+  background-color: #8da6c7;
+}
+#mood-notes-question {
+  text-align: center;
+  padding-top: 5%;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+  font-size: 20px;
+}
+#logmood {
+  width: 100px;
+  margin: auto;
+}
+.footer {
+  position: fixed;
+  text-align: center;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #a5c1e5;
+  font-family: "Varela Round", sans-serif;
+  color: #e4eef5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+#logoLogin {
+  height: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#error {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+.login-input {
+  border-radius: 50px;
+  background-color: #a5c1e5;
+  padding: 12px 20px;
+  border: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #e4eef5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+#login-form {
+  width: max-content;
+  margin: auto;
+  text-align: left;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #a5c1e5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+#login-button {
+  width: max-content;
+  margin: auto;
+}
+#insightTitle {
+  padding-top: 5%;
+  width: max-content;
+  margin: auto;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+  font-size: 60px;
+}
+#insights {
+  padding-top: 5%;
+  width: max-content;
+  margin: auto;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  background-color: #8da6c7;
+}
+#howto {
+  align-items: center;
+  text-align: center;
+  padding-bottom: 7%;
+}
+#howtoimg {
+  width: 50%;
+  height: auto;
+}
+#howtobutton {
+  align-items: center;
+  width: max-content;
+  margin: auto;
+}
+.bn54 {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 45px;
+  width: 130px;
+  opacity: 1;
+  background-color: #a5c1e5;
+  border: 1px solid #a5c1e5;
+}
+#at {
+  width: 3%;
+  height: auto;
+}
+#userProfile {
+  font-family: "Varela Round", sans-serif;
+  color: #a5c1e5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+#medTable {
+  align-items: center;
+  text-align: center;
+}
+#meditations {
+  font-family: "Varela Round", sans-serif;
+  color: #a5c1e5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 20%;
+}
+#medtitle {
+  font-family: "Varela Round", sans-serif;
+  color: #a5c1e5;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#medbutton {
+  width: 50%;
+}
+.bn54 .bn54span {
+  font-family: "Varela Round", sans-serif;
+  color: #e4eef5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+.bn54:hover {
+  animation: bn54rotate 0.7s ease-in-out both;
+}
+
+.bn54:hover .bn54span {
+  animation: bn54storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes bn54rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bn54storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.fade-in-text {
+  animation: fadeIn linear 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s;
+  padding-bottom: 10%;
+}
+
+/*moodPercent arc'd slider*/
+#arc-slider {
+  height: 110px !important;
+  width: 500px !important;
+  border: 1px dashed;
+  overflow: hidden;
+  padding: 15px;
+}
+#arc-slider .rs-container {
+  margin-left: -350px; /* here 300 is the radius value */
+  left: 50%;
+}
+#arc-slider .rs-tooltip {
+  top: 60px;
+}
+#arc-slider .rs-tooltip-text {
+  font-size: 25px;
+}
+#arc-slider .rs-border {
+  border-width: 0px;
+}
+
+/* Appearance related changes */
+.rs-control .rs-range-color {
+  background-color: #54bbe0;
+}
+.rs-control .rs-path-color {
+  background-color: #5f5f5f;
+}
+.rs-control .rs-handle {
+  background-color: #51c5cf;
+}
+
+/*end of moodPercent arc'd slider css*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn41-43 {
+  width: 250px;
+  height: 100px;
+  padding: 10px 25px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn80 {
+  width: 1000px;
+  padding: 10px 25px;
+  font-family: "Varela Round", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-43 {
+  border: 2px solid #a5c1e5;
+  z-index: 1;
+  color: #a5c1e5;
+}
+
+.btn-43:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #a5c1e5;
+  transition: all 0.3s ease;
+}
+
+.btn-43:hover {
+  color: #e4eef5;
+}
+
+.btn-43:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #a5c1e5;
+  position: relative;
+  height: 100%;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #e4eef5;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: #a5c1e5;
+  display: fixed;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #e4eef5;
+  color: #a5c1e5;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #a5c1e5;
+  color: white;
+  font-family: "Varela Round", sans-serif;
+  letter-spacing: 0.7px;
+  color: #e4eef5;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+#tableLabel {
+  text-align: center;
+}
+
+#graphTable {
+  font-family: "Varela Round", sans-serif;
+  color: #a5c1e5;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: center;
+}
+#graphTableTd {
+  margin-right: 0;
+}
+#graphTitle {
+  font-family: "Varela Round", sans-serif;
+  color: #8da6c7;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+}
+
+#meditationButtons {
+  float: left;
+  width: 20%;
+  padding-top: 10%;
+  position: fixed;
+}
+
+#meditations {
+  float: right;
+  width: 40%;
+  padding-right: 30%;
+  padding-top: 2%;
+}
+
+#userHome {
+  float: left;
+  width: 30%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  margin-left: 2%;
+}
+
+.anim-circle-relax {
+  color: transparent;
+  position: absolute;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgb(214, 229, 252);
+  animation: breathe 7s linear infinite;
+}
+
+.anim-circle-focus {
+  color: transparent;
+  position: absolute;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgb(214, 229, 252);
+  animation: breathe 5s linear infinite;
+}
+
+.anim-circle-sleep {
+  color: transparent;
+  position: absolute;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgb(214, 229, 252);
+  animation: breathe 9s linear infinite;
+}
+
+#breath-exer {
+  font-family: "Varela Round", sans-serif;
+  color: #8da6c7;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+}
+#breath-exer-table {
+  font-family: "Varela Round", sans-serif;
+  color: #a5c1e5;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 15px rgba(171, 205, 250, 0.3),
+      0 0 0 30px rgba(171, 205, 250, 0.3), 0 0 0 45px rgba(171, 205, 250, 0.3),
+      0 0 0 60px rgba(171, 205, 250, 0.3), 0 0 0 75px rgba(171, 205, 250, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 25px rgba(171, 205, 250, 0.3),
+      0 0 0 50px rgba(171, 205, 250, 0.3), 0 0 0 75px rgba(171, 205, 250, 0.3),
+      0 0 0 100px rgba(171, 205, 250, 0.3), 0 0 0 125px rgba(171, 205, 250, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(171, 205, 250, 0.3),
+      0 0 0 30px rgba(171, 205, 250, 0.3), 0 0 0 45px rgba(171, 205, 250, 0.3),
+      0 0 0 60px rgba(171, 205, 250, 0.3), 0 0 0 75px rgba(171, 205, 250, 0.3);
+  }
+}
+
+a.button1 {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #a5c1e5;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 1em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Varela Round", sans-serif;
+  color: #a5c1e5;
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  color: #a5c1e5;
+  text-align: center;
+  transition: all 0.2s;
+  width: 100%;
+}
+a.button1:hover {
+  color: #000000;
+  background-color: #a5c1e5;
+  color: #e4eef5;
+}
+@media all and (max-width: 30em) {
+   a.button1 {
+    display: block;
+    margin: 0.4em auto;
+  }
+}

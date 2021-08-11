@@ -1,0 +1,75 @@
+<div class="createAccount">
+
+    <body>
+        <script>
+            function validate() {
+                if (document.getElementById('name').value == "") {
+                    document.getElementById('error').innerHTML = "Please enter your desired username";
+                    return false;
+                }
+                if (document.getElementById('email').value == "") {
+                    document.getElementById('error').innerHTML = "Please enter your Email";
+                    return false;
+                }
+                if (document.getElementById('password').value == "" || (document.getElementById('password').value).length < 6 || (document.getElementById('password').value).length > 13 || !(/[a-zA-Z0-9]{6,13}/).test(document.getElementById('password').value)) {
+                    document.getElementById('error').innerHTML = "Please enter a password including letters and numbers and must be 6-12 characters";
+                    document.getElementById('password').value = "";
+                    document.getElementById('password2').value = "";
+                    return false;
+                }
+                if (document.getElementById('password').value != document.getElementById('password2').value) {
+                    document.getElementById('error').innerHTML = "please ensure that both passwords match";
+                    document.getElementById('password').value = "";
+                    document.getElementById('password2').value = "";
+                    return false
+                }
+            }
+        </script>
+        <br>
+
+        <form action='/createAccount' onsubmit="return validate()" method="POST">
+            <img id="logoLogin" src="/img/SelfcareName.png" alt="selfcare">
+            <p id="error"></p>
+            <div id="login-form">
+                <br>
+                <label for="name">Name:</label><br>
+                <input type='text' id="name" oninvalid="validate()" name="name" class="login-input" required><br>
+                <br>
+                <label for="email">Email:</label><br>
+                <input type='text' id="email" oninvalid="validate()" name="email" class="login-input" required>
+                <br>
+                <br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" oninvalid="validate()" name="password" class="login-input"
+                    required><br>
+                <br>
+                <label for="password2">Confirm Password:</label><br>
+                <input type="password" id="password2" oninvalid="validate()" name="confirm password" class="login-input"
+                    required>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div id="login-button">
+                <button id="login" type="submit" value='send' class="bn54">
+                    <span class="bn54span">Sign Up</span>
+                </button>
+                <br>
+        </form>
+        <button id="home" class="bn54" href='/'>
+            <span class="bn54span">Back to Home</span>
+        </button>
+        <script>
+            document.getElementById('home').onclick = function () {
+                location.href = '/';
+            }
+        </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+</div>
+</body>
+</div>

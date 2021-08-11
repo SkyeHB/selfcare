@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<link rel='stylesheet' type='text/css' href='/css/style.css'>
+<link rel="stylesheet" type='text/css' href="/css/roundslider.css">
+<script src="js/chart.js/dist/chart.js"></script>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script>
+    function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+} 
+</script>
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="/userHome" class="active">SelfCare</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="/userHome">Home</a>
+    <a href="/insights">Insights</a>
+    <a href="/meditations">Meditations</a>
+    <a href="/graph">Graph</a>
+    <a href="/breathingExcersizes">Breathing Exercises</a>
+    <a href="/logout">Logout</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+
+</div> 
+</head>
+
+<body>
+    {{{body}}}
+</body>
+
+<footer>
+    <div class="footer"> &copy; selfcare - 2021 </div>
+</footer>
+
+</html>

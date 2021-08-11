@@ -1,0 +1,50 @@
+<div id="mood-emotion-question">
+    What's your mood today?
+</div>
+
+<div class="moodEmotion">
+    <table id="mood-emotions">
+        <tr>
+            <td>
+                <button class="btn41-43 btn-43" id="sad" type="button">Sad</button>
+            </td>
+            <td>
+                <button class="btn41-43 btn-43" id="happy" type="button">Happy</button>
+            </td>
+            <td>
+                <button class="btn41-43 btn-43" id="depressed" type="button">Depressed</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn41-43 btn-43" id="angry" type="button">Angry</button>
+            </td>
+            <td>
+                <button class="btn41-43 btn-43" id="neutral" type="button">Neutral</button>
+            </td>
+            <td>
+                <button class="btn41-43 btn-43" id="anxious" type="button">Anxious</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+        document.getElementById('sad').onclick = function () {
+            location.href = '/moodNotes/sad'
+        }
+        document.getElementById('happy').onclick = function () {
+            location.href = '/moodNotes/happy'
+        }
+        document.getElementById('depressed').onclick = function () {
+            location.href = '/moodNotes/depressed'
+        }
+        document.getElementById('angry').onclick = function () {
+            location.href = '/moodNotes/angry'
+        }
+        document.getElementById('neutral').onclick = function () {
+            location.href = '/moodNotes/neutral'
+        }
+        document.getElementById('anxious').onclick = function () {
+            location.href = '/moodNotes/anxious'
+        }
+    </script>
+</div>

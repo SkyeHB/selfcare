@@ -1,0 +1,45 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="/js/roundslider.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#slider").roundSlider({
+                radius: 111,
+                sliderType: "min-range",
+                value: 45,
+                startAngle: 315,
+                circleShape: "pie",
+                editableTooltip: false
+            });
+        });
+    </script>
+</head>
+<div class="moodPercent">
+    <div id="mood-percent-question">
+        On a scale of 0-100, how's your mood today?
+    </div>
+
+    <body>
+        <div class="container">
+            <div id="slider"></div>
+        </div>
+        <br><br><br>
+        <div id="mood-percent-button">
+            <button type="button" id="login" class="bn54">
+                <span class="bn54span">Next</span>
+            </button>
+        </div>
+        <script>
+            document.getElementById('login').onclick = function () {
+                var obj = $("#slider").data("roundSlider");
+                var testvalue = obj.getValue();
+                console.log(testvalue);
+                $.post('/moodPercent', { percent: testvalue }, function () {
+                    location.href = '/moodEmotion';
+                })
+            }
+        </script>
+    </body>
+</div>

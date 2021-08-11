@@ -1,0 +1,67 @@
+<script>
+  function exer1(){ 
+      var x = document.getElementById('breathe');
+      while(x.firstChild){
+        x.removeChild(x.lastChild);
+    }
+     var y = document.createElement("p")
+     y.className = 'anim-circle-relax'
+
+     x.appendChild(y);
+  } 
+  
+  function exer2(){ 
+            var x = document.getElementById('breathe');
+      while(x.firstChild){
+        x.removeChild(x.lastChild);
+    }
+         var y = document.createElement("p")
+     y.className = 'anim-circle-sleep'
+
+     x.appendChild(y);
+  } 
+  
+  function exer3(){ 
+            var x = document.getElementById('breathe');
+      while(x.firstChild){
+        x.removeChild(x.lastChild);
+    }
+         var y = document.createElement("p")
+     y.className = 'anim-circle-focus'
+
+     x.appendChild(y);
+  }
+</script>
+
+<div id="breath-exer">
+<h3>Breathe in as the circle expands, Exhale as the cirle shrinks.</h3>
+   </div>
+<table id="breath-exer-table"> <tr>
+    <td><h5>Select breathing mode timing:</h5></td>
+    <td>
+    <button id="home" class="bn54" onclick='exer1()'>
+      <span class="bn54span">Relax</span>
+    </button>
+    </td>
+    <td>
+    <button id="home" class="bn54" onclick='exer2()'>
+      <span class="bn54span">Sleep</span>
+    </button>
+    </td>
+    <td>  
+    <button id="home" class="bn54" onclick='exer3()'>
+      <span class="bn54span">Focus</span>
+    </button>
+    </td> 
+    </tr> 
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div id = 'breathe'>
+    <p class='anim-circle-relax'></p>
+</div>

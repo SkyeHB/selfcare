@@ -1,0 +1,33 @@
+<div class="homeBody">
+
+    <body>
+        <div class="fade-in-text">
+            <img id="logoMain" src="/img/selfcarelogo2.png" alt="selfcare">
+            <br>
+            <div id="buttonsHome">
+                <button id="create" class="bn54">
+                    <div class="bn54span">Sign Up</div>
+                </button>
+                <br>
+                <button id="login" class="bn54">
+                    <div class="bn54span">Log In</div>
+                </button>
+                <br>
+                <button id="howtohome" class="bn54">
+                    <div class="bn54span">How to Use</div>
+                </button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            document.getElementById("create").onclick = function () {
+                location.href = "/createAccount";
+            }
+            document.getElementById("login").onclick = function () {
+                location.href = "/login"
+            }
+            document.getElementById("howtohome").onclick = function () {
+                location.href = "/howto"
+            }
+        </script>
+    </body>
+</div>

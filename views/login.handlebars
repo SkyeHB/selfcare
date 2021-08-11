@@ -1,0 +1,53 @@
+<div class="formBody">
+
+  <body>
+    <script>
+      function validate() {
+        if (document.getElementById('email').value == "") {
+          return false;
+        }
+        if (document.getElementById('password').value == "") {
+          return false;
+        }
+      }
+    </script>
+    <br>
+
+
+
+    <form id="form" action='/login' onsubmit="return validate()" method="POST">
+      <img id="logoLogin" src="/img/SelfcareName.png" alt="selfcare">
+      <br>
+      <div id="error">
+        {{warning}}
+
+      </div>
+      <div id="login-form">
+        <br>
+        <br>
+        <label for="email">email:</label> <br>
+        <input type='text' id="email" name="email" class="login-input" required>
+        <br>
+        <br>
+        <label for="password">Password:</label> <br>
+        <input type="password" id="password" name="password" class="login-input" required>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div id="login-button">
+        <button id="login" type="submit" class="bn54">
+          <span class="bn54span">Log In</span>
+        </button>
+        <br>
+    </form>
+    <button id="home" class="bn54" href='/'>
+      <span class="bn54span">Back to Home</span>
+    </button>
+</div>
+<script>
+  document.getElementById('home').onclick = function () {
+    location.href = '/';
+  }
+</script>
+</body>
