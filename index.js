@@ -10,7 +10,7 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 //app.use('/public', express.static(path.join(__dirname, 'public')));
-app.use(express.static('/public'));
+app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({
     extended: true
 }));
