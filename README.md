@@ -1,2 +1,2 @@
 # selfcare
-A mood tracking application for android. 
+A mood tracking application the web. 
